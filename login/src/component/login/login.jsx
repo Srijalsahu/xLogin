@@ -8,6 +8,7 @@ const Login = () => {
 
   const handleLogin = () => {
     if (username === 'user' && password === 'password') {
+      setErrorMessage('');
       alert(`Welcome, ${username}!`);
     } else {
       setErrorMessage('Invalid username or password');
@@ -17,7 +18,7 @@ const Login = () => {
   return (
     <div className={styles.container}>
       <form className={styles.form}>
-        <label htmlFor="username">Username</label>
+        <label htmlFor="username" className={styles.label}>Username</label>
         <input
           type="text"
           id="username"
@@ -25,7 +26,7 @@ const Login = () => {
           onChange={(e) => setUsername(e.target.value)}
           className={styles.input}
         />
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password" className={styles.label}>Password</label>
         <input
           type="password"
           id="password"
@@ -43,4 +44,3 @@ const Login = () => {
 };
 
 export default Login;
-
